@@ -50,29 +50,21 @@ A secure, privacy-focused video calling application built with Next.js and WebRT
 
 ## UI Preview 📸
 
-![](https://github.com/user-attachments/assets/0293e75f-333f-4376-8ff5-fccaae0ab138)
+![](https://res.cloudinary.com/dbm0lqxsayooletsgognnnasdnasdn/image/upload/v1741293841/i1_oqf8ms.png)
 
+![](https://res.cloudinary.com/dbm0lqxsayooletsgognnnasdnasdn/image/upload/v1741293841/i2_hyd59l.png)
 
-![](https://github.com/user-attachments/assets/2cbf16d6-7c7f-41c4-9bf0-b74994d224f4)
+![](https://res.cloudinary.com/dbm0lqxsayooletsgognnnasdnasdn/image/upload/v1741293841/i3_gupwfx.png)
 
+![](https://res.cloudinary.com/dbm0lqxsayooletsgognnnasdnasdn/image/upload/v1741293842/i4_dldzic.png)
 
-![](https://github.com/user-attachments/assets/6ccbbcdd-be4d-43d2-9927-0b415a7d4904)
+![](https://res.cloudinary.com/dbm0lqxsayooletsgognnnasdnasdn/image/upload/v1741293842/i5_jbueqa.png)
 
+![](https://res.cloudinary.com/dbm0lqxsayooletsgognnnasdnasdn/image/upload/v1741293843/i6_ktbmom.png)
 
-![](https://github.com/user-attachments/assets/283720b2-5ad9-4766-b848-ad80e9e59d04)
+![](https://res.cloudinary.com/dbm0lqxsayooletsgognnnasdnasdn/image/upload/v1741293843/i8_yybmmh.png)
 
-
-![](https://github.com/user-attachments/assets/577fc971-2c04-4b2d-a428-fbc64a090001)
-
-
-
-![](https://github.com/user-attachments/assets/21b31f9a-991b-4cf0-8e7f-8f5fa1262508)
-
-
-![](https://github.com/user-attachments/assets/648df3d4-7b52-4bb4-a939-07a02ec87262)
-
-
-![](https://github.com/user-attachments/assets/d5ead8fe-fda8-4584-a939-cef1126a0f9c)
+![](https://res.cloudinary.com/dbm0lqxsayooletsgognnnasdnasdn/image/upload/v1741293843/i7_ewe58i.png)
 
 ---
 
