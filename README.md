@@ -92,3 +92,11 @@ We take your privacy seriously:
 
 ## note
 coturn helps with NAT, and we are able to by pass most NATs and ISP's! even the super strict ones in India. if you find the call not working on any specific ISP or behind a very specific nat of FW feel free to drop a message
+
+# Backend repo, OSS
+- a simple flask app used as a signalling server to connect candidates and transmit basic info about ICE
+[Backend repo](https://github.com/Govind783/flask-signalling-server-vc)
+
+# Turn server config and details
+- learn more the turn config, hosting coturn and traversing restrective NAT's
+[Indepth guide](https://govindbuilds/blogs)

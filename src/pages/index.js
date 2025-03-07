@@ -126,7 +126,7 @@ export default function Home() {
                 <li className="mb-1">
                   The code is{" "}
                   <Link
-                    href={"https://github.com/Govind783/nextjs-video-call-and-chat"}
+                    href={"https://github.com/Govind783/next-JS-webrtc-coturn"}
                     target="_blank"
                     className="mx-[2px] underline"
                   >
@@ -138,7 +138,7 @@ export default function Home() {
 
               <div className="mt-8 md:flex-row flex-col flex w-full mb-5 md:mb-0 justify-between gap-2 items-center">
                 <Button className="flex-1 w-[90%] rounded-3xl" variant="outline">
-                  <Link className="flex items-center gap-2" href={"https://github.com/Govind783/nextjs-video-call-and-chat"} target="_blank">
+                  <Link className="flex items-center gap-2" href={"https://github.com/Govind783/next-JS-webrtc-coturn"} target="_blank">
                     View On Github
                     <Github />
                   </Link>
