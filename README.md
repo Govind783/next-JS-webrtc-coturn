@@ -91,6 +91,6 @@ coturn helps with NAT, and we are able to by pass most NATs and ISP's! even the 
 
 # Turn server config and details
 - learn more the turn config, hosting coturn and traversing restrective NAT's
-[Indepth guide](https://govindbuilds/blogs)
+[Indepth guide](https://govindbuilds.com/blogs)
 
 Do star the Repo 🌟
