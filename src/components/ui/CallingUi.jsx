@@ -1,7 +1,6 @@
 import React, { memo, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 import { Mic, MicOff, Video, VideoOff, PhoneOff, MessageSquare, Users } from "lucide-react";
 import UniversalTooltip from "./TooltipUniversal";
@@ -83,9 +82,9 @@ const VideoCallScreen = memo(
       });
 
       socket.on("mediaStateChanged", ({ userName, enabled, mediaType }) => {
-        setParticipantsInCall((prev) =>
-          prev.map((p) =>
-            p.name === userName
+        setParticipantsInCall((prev) => {
+          const updated = prev.map((p) =>
+            p.name.trim().toLowerCase().replace(/ /g, "_") === userName.trim().toLowerCase().replace(/ /g, "_")
               ? {
                   ...p,
                   [mediaType === "video" ? "videoOn" : "micOn"]: Boolean(
@@ -93,8 +92,9 @@ const VideoCallScreen = memo(
                   ),
                 }
               : p
-          )
-        );
+          );
+          return updated;
+        });
       });
 
       return () => {
@@ -113,9 +113,9 @@ const VideoCallScreen = memo(
         <div className="flex-1 flex flex-col">
           <div className="flex-1 relative p-4 lg:px-24">
             <div className="grid lg:grid-cols-2 lg:gap-4 gap-10 p-4 grid-cols-1">
-              {participantsInCall.map((participant) => (
-                <div key={participant.name} className="relative">
-                  {participant.videoOn ? (
+              {participantsInCall.map((participant, index) => (
+                <div key={index} className="relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full lg:h-[363px] h-[200px] rounded-lg bg-gray-900 overflow-hidden">
                     <video
                       ref={(el) => {
                         if (el) videoRefs.current[participant.name] = el;
@@ -123,13 +123,15 @@ const VideoCallScreen = memo(
                       autoPlay
                       playsInline
                       muted={participant.name === nameofUser || participant.stream === local_video}
-                      className="w-full lg:h-[363px] h-[200px] rounded-lg bg-gray-900 object-cover"
+                      className={`w-full h-full object-cover ${participant.videoOn ? "" : "hidden"}`}
                     />
-                  ) : (
-                    <div className="w-full lg:h-[363px] h-[200px] rounded-lg bg-gray-900 flex items-center justify-center">
-                      <Users className="h-12 w-12 text-gray-300" />
-                    </div>
-                  )}
+
+                    {!participant.videoOn && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Users className="h-12 w-12 text-gray-300" />
+                      </div>
+                    )}
+                  </div>
                   <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 px-2 py-1 rounded">
                     {participant.name} {participant.name === nameofUser ? "(You)" : ""}
                   </div>
@@ -154,7 +156,7 @@ const VideoCallScreen = memo(
             >
               <UniversalTooltip
                 trigger={!isVideoEnabled ? <VideoOff className="h-6 w-5" /> : <Video className="h-5 w-6" />}
-                content={`Turn video ${!isVideoEnabled ? "off" : "on"}`}
+                content={`Turn video ${!isVideoEnabled ? "on" : "off"}`}
               />
             </div>
             <div
@@ -163,7 +165,7 @@ const VideoCallScreen = memo(
             >
               <UniversalTooltip
                 trigger={!isAudioEnabled ? <MicOff className="h-6 5-6" /> : <Mic className="h-5 w-6" />}
-                content={`Turn Audio ${!isAudioEnabled ? "off" : "on"}`}
+                content={`Turn Audio ${!isAudioEnabled ? "on" : "off"}`}
               />
             </div>
 
