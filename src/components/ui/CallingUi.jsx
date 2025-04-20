@@ -88,7 +88,9 @@ const VideoCallScreen = memo(
             p.name === userName
               ? {
                   ...p,
-                  [mediaType === "video" ? "videoOn" : "micOn"]: enabled,
+                  [mediaType === "video" ? "videoOn" : "micOn"]: Boolean(
+                    enabled === true || enabled === "true" || enabled === "True"
+                  ),
                 }
               : p
           )
